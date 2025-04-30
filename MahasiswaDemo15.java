@@ -31,14 +31,15 @@ public class MahasiswaDemo15 {
                     System.out.printf("Tugas %s berhasil dikumpulkan\n", mhs.nama);
                     break;
                 case 2:
-                    Mahasiswa15 dinilai = stack.pop();
-                    if (dinilai != null) {
-                        System.out.println("Menilai tugas dari " + dinilai.nama);
+                    mhs = stack.pop();
+                    if (mhs != null) {
+                        System.out.println("Menilai tugas dari " + mhs.nama);
                         System.out.print("Masukkan nilai (0-100) : ");
-                        int nilai = scan.nextInt();
-                        scan.nextLine();
-                        dinilai.tugasDinilai(nilai);
-                        System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, nilai);
+                        int nilaiAngka = scan.nextInt();
+                        mhs.tugasDinilai(nilaiAngka);
+                        System.out.printf("Nilai Tugas %s adalah %d\n", mhs.nama, nilaiAngka);
+                        String biner = stack.konversiDesimalKeBiner(nilaiAngka);
+                        System.out.println("Nilai-Biner Tugas: " + biner);
                     }
                     break;
                 case 3:
